@@ -1,9 +1,12 @@
 import express from "express";
+import cors from "cors";
 import { pool } from "./db";
 
 const app = express();
 const PORT = 3000;
 
+// Middleware
+app.use(cors());
 app.use(express.json());
 
 /**
@@ -31,7 +34,9 @@ app.post("/notes", async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error creating note" });
+    res.status(500).json({
+      message: "Error creating note",
+    });
   }
 });
 
@@ -44,10 +49,12 @@ app.get("/notes", async (req, res) => {
       "SELECT * FROM notes ORDER BY id ASC"
     );
 
-    res.json(result.rows);
+    res.status(200).json(result.rows);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error fetching notes" });
+    res.status(500).json({
+      message: "Error fetching notes",
+    });
   }
 });
 
@@ -64,13 +71,17 @@ app.get("/notes/:id", async (req, res) => {
     );
 
     if (result.rows.length === 0) {
-      return res.status(404).json({ message: "Note not found" });
+      return res.status(404).json({
+        message: "Note not found",
+      });
     }
 
-    res.json(result.rows[0]);
+    res.status(200).json(result.rows[0]);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error fetching note" });
+    res.status(500).json({
+      message: "Error fetching note",
+    });
   }
 });
 
@@ -88,21 +99,25 @@ app.put("/notes/:id", async (req, res) => {
     );
 
     if (result.rows.length === 0) {
-      return res.status(404).json({ message: "Note not found" });
+      return res.status(404).json({
+        message: "Note not found",
+      });
     }
 
-    res.json({
+    res.status(200).json({
       message: "Note updated successfully",
       note: result.rows[0],
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error updating note" });
+    res.status(500).json({
+      message: "Error updating note",
+    });
   }
 });
 
 /**
- * DELETE NOTE  ✅ (YOUR REQUEST)
+ * DELETE NOTE
  */
 app.delete("/notes/:id", async (req, res) => {
   const { id } = req.params;
@@ -114,16 +129,20 @@ app.delete("/notes/:id", async (req, res) => {
     );
 
     if (result.rows.length === 0) {
-      return res.status(404).json({ message: "Note not found" });
+      return res.status(404).json({
+        message: "Note not found",
+      });
     }
 
-    res.json({
+    res.status(200).json({
       message: "Note deleted successfully",
       note: result.rows[0],
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error deleting note" });
+    res.status(500).json({
+      message: "Error deleting note",
+    });
   }
 });
 
@@ -131,5 +150,5 @@ app.delete("/notes/:id", async (req, res) => {
  * START SERVER
  */
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
