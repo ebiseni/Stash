@@ -35,7 +35,7 @@ function TagsPage() {
 
       {allTags.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-state__illustration"><img src="/public/tags-empty.svg" alt="" /></div>
+          <div className="empty-state__illustration"><img src="/tags-empty.svg" alt="" /></div>
           <h2 className="empty-state__heading">No tags yet</h2>
           <p className="empty-state__text">
             Tags are added when you save a resource.

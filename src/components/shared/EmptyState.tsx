@@ -7,7 +7,7 @@ function EmptyState() {
   return (
     <div className="empty-state">
       <div className="empty-state__illustration">
-        <img src="/public/empty image.svg" alt="" />
+        <img src="/empty image.svg" alt="" />
       </div>
       <h2 className="empty-state__heading">Your library is empty</h2>
       <p className="empty-state__text">

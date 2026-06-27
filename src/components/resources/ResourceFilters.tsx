@@ -37,7 +37,7 @@ function ResourceFilters({ showCounts = false, counts = {} }: ResourceFiltersPro
         );
       })}
       <button className="resource-filters__filter-btn">
-        Filter <img src="/public/filter-icon.svg" alt="" />
+        Filter <img src="/filter-icon.svg" alt="" />
       </button>
     </div>
   );

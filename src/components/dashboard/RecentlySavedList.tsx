@@ -25,7 +25,7 @@ function RecentlySavedList() {
       <ul className="resource-list">
         {recent.map(resource => (
           <li key={resource.id} className="resource-list__item">
-            <span className="resource-list__icon"><img src="/public/file-icon.svg" alt="" /></span>
+            <span className="resource-list__icon"><img src="/file-icon.svg" alt="" /></span>
             <div className="resource-list__body">
               <span className="resource-list__title">{resource.title}</span>
               <span className="resource-list__url">{resource.url}</span>

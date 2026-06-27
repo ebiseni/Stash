@@ -25,7 +25,7 @@ function CollectionsPreview() {
         {preview.map((col) => (
           <div key={col.id} className="collection-card">
             <span className="collection-card__icon">
-              <img src="/public/collection-preview-icon.svg" alt="" />
+              <img src="/collection-preview-icon.svg" alt="" />
             </span>
             <span className="collection-card__name">{col.name}</span>
             <span className="collection-card__count">

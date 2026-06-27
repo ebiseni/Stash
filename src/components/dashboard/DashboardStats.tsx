@@ -8,11 +8,11 @@ function DashboardStats() {
   const allTags = new Set(resources.flatMap(r => r.tags));
 
   const stats = [
-    { icon:             <span className="resource-list__icon"><img src="/public/file-icon.svg" alt="" /></span>
+    { icon:             <span className="resource-list__icon"><img src="/file-icon.svg" alt="" /></span>
 , count: activeResources.length, label: 'Saved Resources' },
-    { icon:             <span className="resource-list__icon"><img src="/public/folders-collection.svg" alt="" /></span>
+    { icon:             <span className="resource-list__icon"><img src="/folders-collection.svg" alt="" /></span>
 ,  count: collections.length,     label: 'Collections'     },
-    { icon:             <span className="resource-list__icon"><img src="/public/tags-icon.svg" alt="" /></span>
+    { icon:             <span className="resource-list__icon"><img src="/tags-icon.svg" alt="" /></span>
 ,  count: allTags.size,            label: 'Tags'            },
   ];
 
