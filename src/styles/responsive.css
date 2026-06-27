@@ -1,0 +1,353 @@
+/* ══════════════════════════════════════════
+   TABLET — max-width: 1024px
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  /* Sidebar narrows */
+  :root {
+    --sidebar-width: 200px;
+  }
+
+  /* Stats go to 2x2 grid */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Collections grid 2 columns */
+  .col-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Dashboard max width loosens */
+  .dashboard,
+  .resource-list-page,
+  .search-results,
+  .col-grid-page {
+    max-width: 100%;
+  }
+}
+
+/* ══════════════════════════════════════════
+   SMALL TABLET — max-width: 768px
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Show hamburger and mobile logo */
+  .layout__hamburger {
+    display: flex;
+  }
+
+ 
+  /* Sidebar wrapper fixed, off screen by default */
+  .layout__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 400;
+  }
+
+  /* Sidebar slides in when open class added to aside */
+  .layout__sidebar--open {
+    transform: translateX(0);
+  }
+
+  /* Main takes full width */
+  .layout__main {
+    width: 100%;
+  }
+
+  .layout__content {
+    padding: 1.25rem;
+  }
+
+  /* Stats 2 columns */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Collections 2 columns */
+  .col-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Headers stack */
+  .dashboard__header,
+  .col-grid-page__header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  /* ── Welcome Card ── */
+  .welcome-card {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .welcome-card .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .resource-list__item .resource-type-badge {
+    display: none;
+  }
+
+  .resource-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .modal-card,
+  .modal-card--wide {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+  }
+
+  .topbar {
+    padding: 0 1rem;
+  }
+}
+
+/* ── Resource Detail ── */
+.resource-detail__meta {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resource-detail__meta-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 0.75rem;
+}
+
+.resource-detail__meta-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* ══════════════════════════════════════════
+   MOBILE — max-width: 480px
+══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* ── Layout content padding tightens ── */
+  .layout__content {
+    padding: 1rem;
+  }
+
+  /* ── Stats go single column ── */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .stats__card {
+    padding: 0.9rem;
+  }
+
+  .stats__count {
+    font-size: 1.3rem;
+  }
+
+  /* ── Collections single column ── */
+  .col-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Collections preview wraps ── */
+  .collections-preview {
+    gap: 0.6rem;
+  }
+
+  .collection-card {
+    width: 100px;
+  }
+
+  /* ── Dashboard headings scale down ── */
+  .dashboard__greeting {
+    font-size: 1.35rem;
+  }
+
+  /* ── Welcome Card ── */
+  .welcome-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .welcome-card .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .col-grid-page__heading {
+    font-size: 1.35rem;
+  }
+
+  /* ── Resource list rows tighten ── */
+  .resource-list__item {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .resource-list__url {
+    display: none;
+  }
+
+  /* ── Filter chips scroll horizontally ── */
+  .resource-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .resource-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex-shrink: 0;
+  }
+
+  /* ── Modal full screen ── */
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-card,
+  .modal-card--wide {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 95vh;
+    padding: 1.25rem;
+    width: 100%;
+  }
+
+  /* ── Search results table scrolls ── */
+  .resource-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .resource-table {
+    min-width: 560px;
+  }
+
+  /* ── Section headings ── */
+  .section__heading {
+    font-size: 0.95rem;
+  }
+
+  /* ── Top tags wrap more tightly ── */
+  .top-tags {
+    gap: 0.35rem;
+  }
+
+  .tag-chip {
+    font-size: 0.72rem;
+    padding: 0.18rem 0.45rem;
+  }
+
+  /* ── Empty state tightens ── */
+  .empty-state {
+    padding: 3rem 1rem;
+  }
+
+  /* ── Buttons full width in tight spaces ── */
+  .dashboard__header .btn,
+  .col-grid-page__header .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── Saved resource modal URL wraps ── */
+  .saved-modal__res-url {
+    font-size: 0.72rem;
+  }
+}
+
+/* ── Resource Detail ── */
+.resource-detail {
+  gap: 1rem;
+}
+
+.resource-detail__title {
+  font-size: 1rem;
+}
+
+.resource-detail__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.resource-detail__header {
+  padding: 1rem;
+}
+
+.resource-detail__meta {
+  padding: 1rem;
+}
+
+.resource-detail__section .btn {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+/* ── URL Error ── */
+.resource-detail__url-error {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resource-detail__url-error .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   VERY SMALL — max-width: 360px
+══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .stats__count {
+    font-size: 1.1rem;
+  }
+
+  .stats__label {
+    font-size: 0.72rem;
+  }
+
+  .sidebar__link {
+    padding: 0.3rem 0.4rem;
+  }
+
+  /* Show close button on mobile */
+  .sidebar__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard__greeting {
+    font-size: 1.1rem;
+  }
+
+  .modal-card,
+  .modal-card--wide {
+    padding: 1rem;
+  }
+}
