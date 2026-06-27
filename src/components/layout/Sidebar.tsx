@@ -31,7 +31,7 @@ function Sidebar({ isOpen, onClose }: SidebarProps) {
       <nav className="sidebar">
         <div className="sidebar__logo">
           <div className="sidebar__logo-left">
-            <span className="sidebar__logo-icon"><img src="/public/stash logo.svg" alt="" /></span>
+            <span className="sidebar__logo-icon"><img src="/stash logo.svg" alt="" /></span>
             <span className="sidebar__logo-text">Stash</span>
           </div>
 
