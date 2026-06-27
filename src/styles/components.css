@@ -117,7 +117,6 @@
 }
 
 .resource-list__menu-wrapper {
-  border: 2px solid red;
   position: relative;
   flex-shrink: 0;
 }
