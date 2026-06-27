@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const navItems = [
-  { to: '/',            label: 'Dashboard',     icon: <img src="/public/dashboard-icon.svg" alt="" /> },
-  { to: '/resources',   label: 'All Resources', icon: <img src="/public/file-icon.svg" alt="" /> },
-  { to: '/collections', label: 'Collections',   icon: <img src="/public/folders-collection.svg" alt="" /> },
-  { to: '/tags',        label: 'Tags',          icon: <img src="/public/tags-icon.svg" alt="" /> },
+  { to: '/',            label: 'Dashboard',     icon: <img src="/dashboard-icon.svg" alt="" /> },
+  { to: '/resources',   label: 'All Resources', icon: <img src="/file-icon.svg" alt="" /> },
+  { to: '/collections', label: 'Collections',   icon: <img src="/folders-collection.svg" alt="" /> },
+  { to: '/tags',        label: 'Tags',          icon: <img src="/tags-icon.svg" alt="" /> },
 ];
 
 interface SidebarProps {

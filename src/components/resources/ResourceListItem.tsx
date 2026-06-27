@@ -47,7 +47,7 @@ function ResourceListItem({
         <td className="resource-table__cell">
           <div className="resource-table__title-cell">
             <span className="resource-list__icon">
-              <img src="/public/file-icon.svg" alt="" />
+              <img src="/file-icon.svg" alt="" />
             </span>
             <div>
               <div className="resource-list__title">{resource.title}</div>
@@ -104,7 +104,7 @@ function ResourceListItem({
       onClick={() => navigate(`/resources/${resource.id}`)}
     >
       <span className="resource-list__icon">
-        <img src="/public/file-icon.svg" alt="" />
+        <img src="/file-icon.svg" alt="" />
       </span>
       <div className="resource-list__body">
         <span className="resource-list__title">{resource.title}</span>

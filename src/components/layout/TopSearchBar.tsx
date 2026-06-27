@@ -16,7 +16,7 @@ function TopSearchBar() {
   return (
     <div className="topbar">
       <div className="topbar__search">
-        <span className="topbar__search-icon"><img src="/public/search-icon.svg" alt="serach Icon" /></span>
+        <span className="topbar__search-icon"><img src="/search-icon.svg" alt="serach Icon" /></span>
         <input
           type="text"
           className="topbar__input"

@@ -54,7 +54,7 @@ function ResourceSavedModal({ resource, onClose }: ResourceSavedModalProps) {
         {/* Resource preview */}
         <div className="saved-modal__preview">
           <div className="saved-modal__preview-title">
-            <span className="saved-modal__doc-icon"><img src="/public/file-icon.svg" alt="" /></span>
+            <span className="saved-modal__doc-icon"><img src="/file-icon.svg" alt="" /></span>
             <div>
               <div className="saved-modal__res-title">{resource.title}</div>
               <div className="saved-modal__res-url">{resource.url}</div>
@@ -63,11 +63,11 @@ function ResourceSavedModal({ resource, onClose }: ResourceSavedModalProps) {
 
           <div className="saved-modal__meta">
             <span className="saved-modal__meta-item">
-              <span><img src="/public/folders-icon.svg" alt="" /></span>
+              <span><img src="/folders-icon.svg" alt="" /></span>
               <span>Collection: <strong>{collectionName}</strong></span>
             </span>
             <span className="saved-modal__meta-item">
-              <span><img src="/public/tags-icon.svg" alt="" /></span>
+              <span><img src="/tags-icon.svg" alt="" /></span>
               <span>Tags:</span>
               {resource.tags.map(tag => (
                 <TagChip key={tag} tag={tag} />

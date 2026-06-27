@@ -36,7 +36,7 @@ function CollectionCard({ collection, onEdit }: CollectionCardProps) {
   return (
     <div className="col-card">
       <div className="col-card__header">
-        <span className="col-card__folder"><img src="/public/folders-collection.svg" alt="" /></span>
+        <span className="col-card__folder"><img src="/folders-collection.svg" alt="" /></span>
         <div className="col-card__menu-wrapper">
           <button
             className="col-card__menu-btn"

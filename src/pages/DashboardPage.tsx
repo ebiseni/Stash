@@ -15,7 +15,7 @@ function DashboardPage() {
       <div className="dashboard">
         {/* Welcome card at top */}
         <div className="welcome-card">
-          <div className="welcome-card__icon"><img src="/public/stash logo.svg" alt="" /></div>
+          <div className="welcome-card__icon"><img src="/stash logo.svg" alt="" /></div>
           <div className="welcome-card__text">
             <h3 className="welcome-card__heading">Welcome to Stash</h3>
             <p className="welcome-card__sub">
@@ -33,7 +33,7 @@ function DashboardPage() {
         {/* Empty box illustration below */}
         <div className="empty-state">
           <div className="empty-state__illustration">
-            <img src="/public/empty image.svg" alt="Empty library" />
+            <img src="/empty image.svg" alt="Empty library" />
           </div>
           <h2 className="empty-state__heading">Your library is empty</h2>
           <p className="empty-state__text">
