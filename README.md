@@ -1,6 +1,6 @@
 # Stash
 
-A lightweight React + TypeScript app (Vite) for saving and organizing web resources into collections and tags. Stash provides a dashboard, resource list with add/edit flows, collections grid, tag browsing, and detailed resource views — all using Redux Toolkit for client-side state and React Router for navigation.
+A lightweight React + TypeScript app (Vite) for saving and retrieving web resources into collections and tags. Stash provides a dashboard, resource list with add/edit flows, collections grid, tag browsing, and detailed resource views — all using Redux Toolkit for client-side state and React Router for navigation.
 
 ---
 
@@ -60,6 +60,13 @@ Run the linter:
 ```bash
 npm run lint
 ```
+core dependencies
+```bash
+npm install @reduxjs/toolkit  # Used to integrate Redux with your React components.
+npm install react-redux # Used for centralized state management
+npm install react-router-dom # Implemented for handling client-side routing and protected routes.
+npm install -D @types/react-router-dom # Added as a development dependency to provide TypeScript support for your routing.
+npm install lucide-react # Used to implement the icons you utilized throughout your interface, which contributes to the professional styling of your application.
 
 Notes:
 - The `build` script runs `tsc -b` then `vite build`. Fix TypeScript issues before building.
@@ -141,7 +148,8 @@ There are no test runners configured yet. To add tests:
   - Runs `npm run lint`
   - Runs `npx tsc --noEmit` to verify types
   - Builds (`npm run build`) to ensure production build succeeds
-- Deploy the `dist` output from Vite to static hosts (Netlify, Vercel, GitHub Pages) or to any static-file serving environment.
+  - Deploy the `dist` output from Vite to static hosts(Netlify, Vercel, GitHub Pages) or to any static-file serving environment.
+  - Deployed on Netlify https://group1stash.netlify.app/
 
 ---
 
@@ -161,15 +169,5 @@ No license file is present in this repository. If you want others to use or cont
 ```
 MIT License
 
-Copyright (c) <year> <owner>
+Copyright (c) <2026> <Group 1>
 
-Permission is hereby granted...
-```
-
----
-
-## Questions I can help with next
-
-- I can create a polished README.md file and open a PR with it.
-- I can add a minimal GitHub Actions workflow for linting + build checks.
-- I can add an MIT license file (LICENSE) and create a commit/PR for you.
