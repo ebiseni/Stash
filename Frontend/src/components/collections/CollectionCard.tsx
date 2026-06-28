@@ -1,6 +1,12 @@
 import { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/store';
-import { deleteCollection, type Collection } from '../../features/collections/collectionSlice';
+import { useAppDispatch, useAppSelector } from "../../app/store";
+import {
+  deleteCollection as deleteCollectionApi,
+} from "../../api";
+import {
+  deleteCollection,
+  type Collection,
+} from "../../features/collections/collectionSlice";
 
 interface CollectionCardProps {
   collection: Collection;
@@ -23,9 +29,15 @@ function CollectionCard({ collection, onEdit }: CollectionCardProps) {
     state.resources.items.filter(r => r.collectionId === collection.id).length
   );
 
-  const handleDelete = () => {
-    dispatch(deleteCollection(collection.id));
-    setMenuOpen(false);
+  const handleDelete = async () => {
+    try {
+      await deleteCollectionApi(collection.id);
+
+      dispatch(deleteCollection(collection.id));
+      setMenuOpen(false);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleEdit = () => {
