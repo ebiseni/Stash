@@ -169,5 +169,5 @@ No license file is present in this repository. If you want others to use or cont
 ```
 MIT License
 
-Copyright (c) <2026> <Group 1>
+Copyright (c) 2026 Group 1
 
