@@ -10,7 +10,7 @@ A lightweight React + TypeScript app (Vite) for search and retrieving web resour
 - State management: Redux Toolkit
 - Routing: react-router-dom
 - Dev tooling: Vite, ESLint
-- Main purpose: Save, categorize, and browse web resources using collections and tags.
+- Main purpose: Search, retrieve, save, categorize, and browse web resources using collections and tags.
 
 ---
 
@@ -163,8 +163,6 @@ There are no test runners configured yet. To add tests:
 ---
 
 ## License
-
-No license file is present in this repository. If you want others to use or contribute, add a LICENSE file (for example, MIT or Apache-2.0). Example to add MIT:
 
 ```
 MIT License
