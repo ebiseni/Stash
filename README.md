@@ -1,6 +1,6 @@
 # Stash
 
-A lightweight React + TypeScript app (Vite) for saving and retrieving web resources into collections and tags. Stash provides a dashboard, resource list with add/edit flows, collections grid, tag browsing, and detailed resource views — all using Redux Toolkit for client-side state and React Router for navigation.
+A lightweight React + TypeScript app (Vite) for search and retrieving web resources into collections and tags. Stash provides a dashboard, resource list with add/edit flows, collections grid, tag browsing, and detailed resource views — all using Redux Toolkit for client-side state and React Router for navigation.
 
 ---
 
