@@ -174,7 +174,7 @@ There are no test runners configured yet. To add tests:
   - Builds (`npm run build`) to ensure production build succeeds
   - Deploy the `dist` output from Vite to static hosts (Netlify, Vercel, GitHub Pages) or to any static-file serving environment.
   - Deploy backend API to a Node.js hosting service (Heroku, Railway, Render, etc.)
-  - Deployed on Vercel: https://group1stash.netlify.app/
+  - Deployed on Vercel: https://group1-stash-mvp.vercel.app/
 
 ---
 
