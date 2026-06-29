@@ -1,15 +1,17 @@
 # Stash
 
-A lightweight React + TypeScript app (Vite) for search and retrieving web resources into collections and tags. Stash provides a dashboard, resource list with add/edit flows, collections grid, tag browsing, and detailed resource views — all using Redux Toolkit for client-side state and React Router for navigation.
+A lightweight React + TypeScript app (Vite) for search and retrieving web resources into collections and tags. Stash provides a dashboard, resource list with add/edit flows, collections grid, tag browser, and resource detail pages—backed by a Node.js/Express API with Prisma and PostgreSQL.
 
 ---
 
 ## Quick overview
 
-- Built with: React 19, TypeScript, Vite
+- Built with: React 19, TypeScript, Vite (Frontend)
+- Backend: Node.js, Express, Prisma, PostgreSQL
 - State management: Redux Toolkit
 - Routing: react-router-dom
 - Dev tooling: Vite, ESLint
+- Deployment: Vercel (SPA rewrites configured)
 - Main purpose: Search, retrieve, save, categorize, and browse web resources using collections and tags.
 
 ---
@@ -23,6 +25,10 @@ A lightweight React + TypeScript app (Vite) for search and retrieving web resour
 - Resource detail pages
 - Client-side state via Redux Toolkit
 - TypeScript throughout for safer refactors
+- **Full CRUD functionality** for resources and collections
+- **PostgreSQL backend** with Prisma ORM for persistent data storage
+- **API integration** with production-ready configuration
+- **Vercel deployment** with SPA rewrites for client-side routing
 
 ---
 
@@ -30,6 +36,7 @@ A lightweight React + TypeScript app (Vite) for search and retrieving web resour
 
 - Node.js (LTS recommended)
 - npm (or yarn / pnpm)
+- PostgreSQL (for backend database)
 
 ---
 
@@ -60,17 +67,28 @@ Run the linter:
 ```bash
 npm run lint
 ```
-core dependencies
+
+### Core dependencies
 ```bash
 npm install @reduxjs/toolkit  # Used to integrate Redux with your React components.
 npm install react-redux # Used for centralized state management
 npm install react-router-dom # Implemented for handling client-side routing and protected routes.
 npm install -D @types/react-router-dom # Added as a development dependency to provide TypeScript support for your routing.
 npm install lucide-react # Used to implement the icons you utilized throughout your interface, which contributes to the professional styling of your application.
+```
+
+### Backend setup
+```bash
+cd backend
+npm install
+npx prisma migrate dev
+npm run dev
+```
 
 Notes:
 - The `build` script runs `tsc -b` then `vite build`. Fix TypeScript issues before building.
-- There are currently no test scripts in package.json; add one if you want CI tests.
+- Configure your PostgreSQL database URL in `.env` file for the backend.
+- Backend API runs on a separate port (typically 3000).
 
 ---
 
@@ -84,6 +102,10 @@ Notes:
 ├─ tsconfig.app.json
 ├─ tsconfig.json
 ├─ public/                    # Static assets
+├─ backend/                   # Express API with Prisma
+│  ├─ src/
+│  ├─ prisma/schema.prisma    # Database schema
+│  └─ .env                     # Database credentials
 └─ src/
    ├─ main.tsx                # App entrypoint (Redux Provider + Router)
    ├─ App.tsx                 # Route definitions + modal wiring
@@ -109,6 +131,7 @@ How it fits together:
 - `src/main.tsx` mounts the React app and wires Redux and BrowserRouter.
 - `src/App.tsx` defines the routes and shows add/edit/saved modals based on Redux state (resources slice).
 - Feature logic (slices, types) lives under `src/features` and UI under `src/components`.
+- Backend API (`backend/`) handles resource persistence and database operations.
 
 ---
 
@@ -129,6 +152,7 @@ How it fits together:
 - Add new pages under `src/pages` and register routes in `App.tsx`.
 - Run `npm run lint` before committing to follow existing linting rules.
 - The repo uses plain CSS files in `src/styles`. Follow the established naming (global.css, layout.css, modals.css, etc.).
+- Backend API endpoints should be RESTful and follow standard conventions.
 
 ---
 
@@ -148,8 +172,9 @@ There are no test runners configured yet. To add tests:
   - Runs `npm run lint`
   - Runs `npx tsc --noEmit` to verify types
   - Builds (`npm run build`) to ensure production build succeeds
-  - Deploy the `dist` output from Vite to static hosts(Netlify, Vercel, GitHub Pages) or to any static-file serving environment.
-  - Deployed on Netlify https://group1stash.netlify.app/
+  - Deploy the `dist` output from Vite to static hosts (Netlify, Vercel, GitHub Pages) or to any static-file serving environment.
+  - Deploy backend API to a Node.js hosting service (Heroku, Railway, Render, etc.)
+  - Deployed on Vercel: https://group1stash.netlify.app/
 
 ---
 
@@ -168,4 +193,4 @@ There are no test runners configured yet. To add tests:
 MIT License
 
 Copyright (c) 2026 Group 1
-
+```
